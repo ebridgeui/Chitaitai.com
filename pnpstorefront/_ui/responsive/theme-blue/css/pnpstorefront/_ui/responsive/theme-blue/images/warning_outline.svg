@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/warning_outline</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/warning_outline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#003359" fill-rule="nonzero" cx="20" cy="20" r="18"></circle>
+        <path d="M19.2285156,24.2783203 L18.1235352,13.0166016 L18.1235352,7.80957031 L22.7250977,7.80957031 L22.7250977,13.0166016 L21.6352539,24.2783203 L19.2285156,24.2783203 Z M18.3051758,30 L18.3051758,25.746582 L22.5585938,25.746582 L22.5585938,30 L18.3051758,30 Z" id="!" fill="#FFFFFF"></path>
+    </g>
+</svg>

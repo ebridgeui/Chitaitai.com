@@ -1,0 +1,177 @@
+﻿function init() {
+    $("#imgloadsuburbs").attr("src", "./eLogics/Images/busysmall.gif");
+
+    $("#ddlSuburb").get(0).options.length = 0;
+    $("#ddlSuburb").get(0).options[0] = new Option("Select City From List", "-1");
+
+    $("#ddlSuburb").attr("disabled", "disabled");
+    $("#imgcheck").css("display", "none");
+
+    $("#ddlArea").get(0).options[0] = new Option("Loading Areas...", "-1");
+
+    $.ajax({
+        type: "GET",
+        url: "Search.ashx?operation=GETMUNIC",
+        cache: false,
+        success: function (json) {
+            if (json.length > 0) {
+                $("#ddlArea").get(0).options.length = 0;
+                $("#ddlArea").get(0).options[0] = new Option("Please Select a City", "-1");
+
+                $.each(json, function (index, item) {
+                    $("#ddlArea").get(0).options[$("#ddlArea").get(0).options.length] = new Option(item.text, item.id);
+                });
+            }
+        }
+    });
+
+    if ('parentIFrame' in window) {
+        window.parentIFrame.size();
+    }
+}
+
+function redirect() {
+    //var url = getParameterByName("forwarding-url");
+    var url = "https://profile.pnp.co.za/#register";
+    if (window.top) { window.top.location.href = url; }
+    else { document.location.href = url; }
+}
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.search);
+    if (results == null)
+        return "";
+    else
+        return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
+function blockWidget() {
+    $("#divcollapse").block({
+        message: '<h4>Please Wait...</h4>',
+        css: { border: 'none', width: '100%', paddingLeft: '1px', paddingRight: '1px' },
+        overlayCSS: { backgroundColor: '#fff', opacity: 0.6 }
+    });
+}
+
+function unblockWidget() {
+    $("#divcollapse").unblock();
+}
+
+function blockWidgetSuccessMessage(msg) {
+    $("#divcollapse").block({
+        message: '<h4>' + msg + '</h4>',
+        css: { border: 'none', width: '100%', paddingLeft: '1px', paddingRight: '1px' },
+        overlayCSS: { backgroundColor: '#fff', opacity: 0.6 }
+    });
+}
+
+function blockWidgetMessage(msg) {
+    $("#divcollapse").block({
+        message: '<p style="font-size:12px">' + msg + '</p>',
+        css: { border: 'none', width: '100%', paddingLeft: '1px', paddingRight: '1px' },
+        overlayCSS: { backgroundColor: '#fff', opacity: 0.8 }
+    });
+}
+
+function openCollapsedPanel() {
+    $("#mainPanel").slideToggle();
+    $("#imgcheck").css("display", "none");
+    $("#divcollapse").slideToggle();
+    $("#divcollapsebuffer").slideToggle();
+}
+
+function selectSuburb2() {
+    $("#mainPanel").slideToggle();
+    if ($("#imgcheck").css("display") == "none") {
+        $("#imgcheck").slideToggle();
+    }
+}
+
+function populateSuburbs2() {
+
+    var area = document.getElementById("ddlArea");
+    var selected = area.options[area.selectedIndex];
+    var areatext = selected.value;
+
+    if (areatext.indexOf("- ") === 0 || areatext.indexOf(" ") === 0) {
+
+        $("#ddlSuburb").get(0).options.length = 0;
+        $("#ddlSuburb").get(0).options[0] = new Option("Select City From List", "-1");
+
+        $("#ddlSuburb").attr("disabled", "disabled");
+        $("#imgcheck").css("display", "none");
+
+    } else {
+
+        $("#imgcheck").css("display", "none");
+        $("#ddlSuburb").get(0).options.length = 0;
+        $("#ddlSuburb").get(0).options[0] = new Option("Loading...", "-1");
+
+        var surl = "Search.ashx?operation=GETSUBURBS&municid=" + areatext;
+
+        $.ajax({
+            type: "GET",
+            url: surl,
+            cache: false,
+            success: function (json) {
+                $("#ddlSuburb").removeAttr("disabled");
+
+                if (json.length > 0) {
+                    $("#ddlSuburb").get(0).options.length = 0;
+                    $("#ddlSuburb").get(0).options[0] = new Option("Select Suburb...", "-1");
+                    $.each(json, function (index, item) {
+                        $("#ddlSuburb").get(0).options[$("#ddlSuburb").get(0).options.length] = new Option(item.text, item.id);
+                    });
+                } else {
+                    $("#ddlSuburb").get(0).options[0] = new Option("No Suburbs Found", "-1");
+                    $("#imgcheck").css("display", "none");
+
+                    $("#ddlSuburb").attr("disabled", "disabled");
+                    $("#imgcheck").css("display", "none");
+                }
+            }
+        });
+    }
+}
+
+function resetControl() {
+    $("#mainPanel").show();
+    $("#divcollapse").css("display", "none");
+    $("#ddlSuburb").attr("disabled", "disabled");
+    $("#imgcheck").css("display", "none");
+    $("#divcollapsebuffer").css("display", "none");
+    init();
+    $("#ddlSuburb").get(0).options.length = 0;
+    $("#ddlSuburb").get(0).options[0] = new Option("Select City From List", "-1");
+}
+
+function callServletFromClient() {
+    $.support.cors = true;
+
+    blockWidget();
+
+    var suggestsuburb = $("#txtSuggestSuburb").val();
+    var suggestcity = $("#txtSuggestCity").val();
+
+    if (suggestcity.length > 0 && suggestsuburb.length > 0) {
+
+        $.ajax({
+            type: "GET",
+            url: "Email.ashx?operation=SEND&area=" + suggestcity + "&suburb="+suggestsuburb,
+            cache: false,
+            success: function (json) {
+                blockWidgetSuccessMessage("Thank you.");
+            },
+            error: function (d, errortype) {
+
+                var s = d.status;
+                var st = d.statusText;
+                blockWidgetMessage("An Error Occurred: " + s + ' - ' + st);
+            }
+        });
+    }
+}

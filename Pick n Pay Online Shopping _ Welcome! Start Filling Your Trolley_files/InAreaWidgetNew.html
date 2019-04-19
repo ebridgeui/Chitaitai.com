@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://resolve.pnp.co.za/Address/InAreaWidgetNew.htm -->
+<html lang="en" class="dowedeliver" style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <noscript>
+        <meta http-equiv="refresh" content="0;URL=NoJavascript.htm" />
+    </noscript>
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pick n Pay Online Shopping</title>
+
+    <link rel="stylesheet" href="../styles/serverbootstrap.css" media="all">
+
+</head>
+
+<body onload="init()" style="height: auto;">
+
+    <div class="container-fluid pnpFontMedium">
+        <div class="row widgetHeader">
+            <div class="col-xs-12">
+                <img src="./Delivery-icon-23x22.png" style="width:25px; height:25px; margin-top:12px; margin-bottom:12px">
+                <span style="vertical-align: middle;">&nbsp;&nbsp;Delivery</span>
+            </div>
+        </div>
+
+
+        <div id="mainPanel">
+
+            <div class="row">
+                <div class="col-xs-12 rowpad">
+                    Do we deliver to your area?
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <select id="ddlArea" class="pnpBlue dowedeliver_select" onchange="populateSuburbs2()"><option value="-1">Please Select a City</option><option value="11">Cape Town</option><option value="246">George</option><option value="240">Greater Hermanus</option><option value="245">Groot Brakrivier</option><option value="249">Knysna</option><option value="235">Paarl</option><option value="125">Stanger (KwaDukuza Municipality)</option><option value="236">Stellenbosch</option><option value="12">Durban (eThekwini Municipality)</option><option value="121">Eshowe</option><option value="91">Howick</option><option value="94">Pietermaritzburg</option><option value="28">East London (Buffalo City Municipality)</option><option value="22">Jeffreys Bay</option><option value="227">Port Elizabeth</option><option value="53">East Rand (Ekurhuleni Municipality)</option><option value="83">Johannesburg</option><option value="76">Krugersdorp (Mogale City Municipality)</option><option value="228">Pretoria (Tshwane Municipality)</option><option value="999">Soweto</option><option value="58">Bloemfontein (Mangaung Municipality)</option></select>
+                </div>
+            </div>
+
+            <div class="row">&nbsp;</div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <select id="ddlSuburb" class="pnpBlue dowedeliver_select" onchange="selectSuburb2()" disabled="disabled"><option value="-1">Select City From List</option></select>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12 rowpad">
+                    <a onclick="openCollapsedPanel()" class="btn btn-pnpGreen btn-block" title="Change">Suggest your suburb</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="imgcheck" style="display: none;">
+            <div class="row">
+                <div class="col-xs-12 rowpad">
+                    <a id="lbGoTo" onclick="redirect()">
+                        Yes, we deliver to your area!<br>Click here to register and start shopping
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <a class="btn btn-pnpGray btn-block" onclick="resetControl()">Cancel</a>
+                </div>
+            </div>
+            <div class="row">
+                <div style="height:80px">&nbsp;</div>
+            </div>
+        </div>
+
+
+        <div id="divcollapse" style="display:none">
+            <div class="row">
+                <div class="col-xs-12 rowpad" style="font-size:12px">
+                    We're always looking to update our delivery coverage, so please suggest your area if we don’t already deliver to you.
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <!--<label class="" for="txtSuggestCity">City</label>-->
+                    <input placeholder="City" id="txtSuggestCity" class="form-control block-input" type="text">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <!--<label for="txtSuggestSuburb">Suburb</label>-->
+                    <input placeholder="Suburb" id="txtSuggestSuburb" type="text" class="form-control block-input">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <a class="btn btn-pnpGray btn-block" onclick="resetControl()">Cancel</a>
+                </div>
+                <div class="col-xs-6">
+                    <a class="btn btn-pnpGreen btn-block" onclick="callServletFromClient()">Submit</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="diverrormsg" style="display:none">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label id="lblErrorMsg" style="color:red; visibility:visible; font-size:12px">Test Message</label>
+                    <label id="lblSuccessMsg" style="visibility:visible; font-size:12px">Test Message</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">&nbsp;</div>
+        <!--<div class="row">&nbsp;</div>-->
+
+    </div>
+
+    <div style="clear:both"></div>
+
+
+    <script type="text/javascript" src="./jquery-1.11.0.min.js.download"></script>
+    <script type="text/javascript" src="./iframeResizer.contentWindow.min.js.download"></script>
+    <script type="text/javascript" src="./jquery.blockUI.js.download"></script>
+    <script type="text/javascript" src="./bootstrap.min.js(1).download"></script>
+    <script type="text/javascript" src="./InAreaWidgetScript.js.download"></script>
+
+
+
+
+</body></html>

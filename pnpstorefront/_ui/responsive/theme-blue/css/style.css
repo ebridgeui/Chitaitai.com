@@ -7579,7 +7579,7 @@ output {
 }
 .main-footer {
   margin: 20px 0 0;
-  background: #b61a4c;
+  background: #b22222;
   color: #ffffff;
   font-weight: 300;
 }
@@ -7721,7 +7721,7 @@ footer .footer-left {
   z-index: 2;
 }
 footer .container {
-  background: #b9154a;
+  background: #b22222;
   font-family: "pnpFont";
 }
 footer .btn-default:hover {
@@ -7847,7 +7847,7 @@ footer .pnp-icon-heart {
   background-size: 109px;
 }
 footer .row {
-  background: #b9154a;
+  background: #b22222;
 }
 footer .row .footer-row-social {
   margin-bottom: 22px;
@@ -8399,7 +8399,7 @@ footer .footer-right li.btn-sign-me-up .fed-footer-btn ul li.btn-sign-me-up {
   background-size: 6px;
 }
 .user-group-b2b .dropbtn {
-  background-color: #153a59;
+  background-color: #b22222;
 }
 .user-group-b2b .btn-sign-me-up a {
   background-color: #153a59;
@@ -8413,14 +8413,14 @@ footer .footer-right li.btn-sign-me-up .fed-footer-btn ul li.btn-sign-me-up {
   margin: 0;
   padding: 12px 0 7px 30px;
   z-index: 99;
-  background-color: #92113A;
+  background-color: #b22222;
 }
 @media (min-width: 1024px) {
   .dropbtn {
     margin: auto;
     padding: 16px;
     text-align: center;
-    background-color: #b9154a;
+    background-color: #b22222;
   }
 }
 .dropdown {
@@ -8905,7 +8905,7 @@ footer .title .icon-down-arrow-expander {
   .main-header .md-secondary-navigation li button:hover {
     background: none;
     text-decoration: none;
-    color: #b9154a;
+    color: #b22222;
   }
   .main-header .md-secondary-navigation a {
     font-weight: 400;
@@ -9683,7 +9683,7 @@ body.page-homepage {
   background: #ffffff;
 }
 .main-header .nav-middle {
-  background: #b9154a;
+  background: #b22222;
 }
 .orderAmendMode .main-header .header-accordion #header-nav-dropdown h3.ui-accordion-header {
   background: #000000 !important;
@@ -9971,7 +9971,7 @@ body.page-homepage {
   position: absolute;
   top: 30px;
   z-index: 999;
-  background: #b9154a !important;
+  background: #b22222 !important;
   width: 100%;
   min-height: 1024px;
 }
@@ -10020,7 +10020,7 @@ body.page-homepage {
   display: inline-block;
 }
 .js-region-base-store-select .special-region-base-store-item {
-  background: #b9154a !important;
+  background: #b22222 !important;
 }
 .js-region-base-store-select .special-region-base-store-item p {
   color: #FFF;
@@ -10281,7 +10281,7 @@ body.page-homepage {
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
-  background-color: #b9154a;
+  background-color: #b22222;
   overflow: hidden;
 }
 .main-header .bottom-sec .headerLinks-icons#headerLinks-icons-myTrolley .myTrolley-counter.myTrolley-counter__two {
@@ -10398,7 +10398,7 @@ body.page-homepage {
   }
 }
 .main-header .bottom-sec > div.search-box input::placeholder {
-  color: #b9154a !important;
+  color: #b22222 !important;
 }
 @media (min-width: 480px) {
   .main-header .bottom-sec > div.search-box input::placeholder {
@@ -10424,7 +10424,7 @@ body.page-homepage {
 }
 .main-header .bottom-sec > div.search-box button.btn.btn-link .glyphicon-search {
   font-size: 24px;
-  color: #b9154a;
+  color: #b22222;
 }
 @media (min-width: 480px) {
   .main-header .bottom-sec > div.search-box button.btn.btn-link .glyphicon-search {
@@ -10807,7 +10807,7 @@ body.page-homepage {
   width: 100%;
   padding: 0 10px 0 10px;
   margin: 0;
-  background-color: #b9154a;
+  background-color: #b22222;
   border: none;
   overflow: scroll;
   z-index: 1000;
@@ -11529,8 +11529,8 @@ div.countdown-panel > div.flipper > div.back > div {
 .btn-default {
   border: 3px solid;
   color: #ffffff;
-  background-color: #b9154a;
-  border-color: #b9154a;
+  background-color: #b22222;
+  border-color: #b22222;
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -11568,7 +11568,7 @@ fieldset[disabled] .btn-default.active {
   border-color: #f9d4b4;
 }
 .btn-default .badge {
-  color: #b9154a;
+  color: #b22222;
   background-color: #ffffff;
 }
 .btn-primary {
@@ -11631,7 +11631,7 @@ fieldset[disabled] .btn-primary.active {
   /*padding: 8px 30px;*/
   padding: 10px 20px;
   transition: all 0.2s linear;
-  background-color: #b9154a;
+  background-color: #b22222;
   height: 38px;
   position: relative;
 }
@@ -11705,7 +11705,7 @@ td .btn-primary.btn-primary-blue:active {
 .btn.btn-secondary-whitegrey:hover,
 .btn.btn-secondary-whitegrey:focus,
 .btn.btn-secondary-whitegrey:active {
-  border: 1px solid #b9154a;
+  border: 1px solid #b22222;
   color: #b9154a;
   font-family: "pnpFontMedium", Arial, sans-serif, Helvetica;
   font-weight: normal;
